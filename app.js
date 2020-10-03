@@ -1,16 +1,5 @@
 const inquirer = require('inquirer');
 
-// const fs = require('fs');
-// const generatePage = require('./src/page-template');
-
-// const pageHTML = generatePage(name, github);
-
-// fs.writeFile('./index.html', pageHTML, err => {
-//   if (err) throw err;
-
-//   console.log('Portfolio complete! Check out index.html to see the output!');
-// });
-
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -31,9 +20,8 @@ const promptUser = () => {
   ]);
 };
 
+//Project Prompt 9.3.5
 const promptProject = portfolioData => {
-
-  portfolioData.projects = [];
 
   console.log(`
 =================
@@ -74,7 +62,6 @@ Add a New Project
       message: 'Would you like to enter another project?',
       default: false
     }
-    
   ]);
 };
 
@@ -82,4 +69,40 @@ promptUser()
   .then(answers => console.log(answers))
   .then(promptProject)
   .then(projectAnswers => console.log(projectAnswers));
+
+//COMMENT OUT 9.3.5
+// const fs = require('fs');
+// const generatePage = require('./src/page-template');
+
+// const pageHTML = generatePage(name, github);
+
+// fs.writeFile('./index.html', pageHTML, err => {
+//   if (err) throw err;
+
+//   console.log('Portfolio complete! Check out index.html to see the output!');
+// });
+
+//COMMENT OUT 9.2.5
+//console.log(name, github);
+//console.log(generatePage(name, github));
+
+
+//COMMENT OUT 9.2.3
+/*const printProfileData = profileDataArr => {
+  // This...
+  for (let i = 0; i < profileDataArr.length; i += 1) {
+    console.log(profileDataArr[i]);
+  }
+
+  console.log('================');
+
+  // Is the same as this...
+  profileDataArr.forEach(profileItem => console.log(profileItem));
+};
+
+printProfileData(profileDataArgs); 
+//COMMENT OUT 9.2.3 */
+
+
+
 
